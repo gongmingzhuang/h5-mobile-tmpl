@@ -1,0 +1,125 @@
+<style>
+  .user-album {
+    background: #F6F9F8;
+  }
+
+  .my-album {
+    background: #fff;
+    padding: .5rem;
+  }
+
+  .my-album .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .my-album .album-container {
+    display: flex;
+    justify-content: start;
+    padding: .2rem;
+    margin-top: .5rem;
+  }
+
+  .my-album .album {
+    border-radius: .3rem;
+    overflow: hidden;
+  }
+
+  .my-album .album+.album {
+    margin-left: .5rem;
+  }
+
+  .my-album .album>div {
+    position: relative;
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .my-album .album>div span {
+    position: absolute;
+    bottom: .2rem;
+    right: .4rem;
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+    color: #fff;
+  }
+
+  .my-photo {
+    padding: .5rem;
+    background: #fff;
+  }
+  .my-photo .p{
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+  .my-photo .photo .p{
+    width: 27.2vw;
+    height: 27.2vw;
+    padding-right: .5rem;
+  }
+  .my-photo .date{
+    width: 15%;
+    padding-right: 1rem;
+    font-size: 1.2rem;
+  }
+  .my-photo .date .year{
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+  .my-photo .photo{
+    width: 85%;
+  }
+</style>
+<div class="user-album w-100 h-100 pt-05r">
+  <main class="main">
+    <div class="my-album mt-05r-i rst">
+      <div class="head">
+        <div class="head-left">
+          <span>相册(${albums.length})</span>
+        </div>
+        <div class="head-right">
+          <i class="iconfont icon-es-gengduo"></i>
+        </div>
+      </div>
+      <div class="album-container">
+        {{each(index,item) albums}}
+        <div class="album">
+          <div>
+            <img src="${item.cover}" alt="">
+            <span>${item.label}</span>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="my-photo mt-1r-i">
+      <div class="head">
+        <span>全部图片</span>
+      </div>
+      <div class="photos mt-1r">
+        {{each(index,item) photos}}
+        <div class="d-flex mb-05r">
+          <div class="date t-right">
+            <p class="month">${item.date.split('-')[1]}月</p>
+            {{if currentTime.split('-')[0]!=item.date.split('-')[0]}}
+            <p class="year">${item.date.split('-')[0]}</p>
+            {{/if}}
+          </div>
+          {{if item.photos.length>0}}
+          <div class="photo d-flex fx-wrap">
+            {{each(sidx,sitm) item.photos}}
+            {{if sitm.src}}
+            <div class="p mb-05r">
+              <img src="${sitm.src}" alt="">
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </main>
+</div>

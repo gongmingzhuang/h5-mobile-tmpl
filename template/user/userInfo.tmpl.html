@@ -1,0 +1,6 @@
+{{each(index,item) userInfo}}
+<div class="t-center ${item.prop}">
+  <p>{{if item.number}}${item.number}{{else}}0{{/if}}</p>
+  <p>{{if item.label}}${item.label}{{else}}-{{/if}}</p>
+</div>
+{{/each}}

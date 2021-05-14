@@ -1,0 +1,14 @@
+/*
+* 全局样式设置
+*/
+/* 定义属性变量 */
+:root{
+  /* 主题色设置 */
+  --main-color: #009688;
+  /* --main-color: red; */
+  /* 默认字体大小，rem 基础 */
+  --main-font-size: 14px;
+
+  /* 预设渐变 */
+  --bg-l-grad-0: linear-gradient(to bottom, #faff72, #44cef6);
+}

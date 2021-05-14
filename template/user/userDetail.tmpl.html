@@ -1,0 +1,11 @@
+<div class="user-avatar">
+  <img src="{{if userDetail.src}}${userDetail.src}{{else}}../../img/user/default.jpg{{/if}}" class="bd-r-circle" alt="">
+</div>
+<div class="user-name">
+  <div class="name">{{if userDetail.name}}${userDetail.name}{{else}}[用户名]{{/if}}</div>
+  <div class="description">简介：{{if userDetail.description}}${userDetail.description}{{else}}暂无简介{{/if}}</div>
+</div>
+<div class="member d-flex ai-center">
+  <i class="iconfont icon-es-wxbbiaowang rst"></i>
+  <p>会员</p>
+</div>

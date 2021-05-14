@@ -1,0 +1,629 @@
+@import url(./root.css);
+
+/*
+ [20210513][warn] 如果使用ie 访问，则需将全局css 变量进行替换，如下
+  --main-color
+  --main-font-size
+*/
+
+/* 公共css */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+	padding: 0;
+	margin: 0;
+	width: 100%;	
+	height: 100%;	
+	position: absolute;	
+	left: 0;top: 0;	
+	overflow: hidden;	
+	overflow-y: auto;
+  font-size: var(--main-font-size);
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.d-block{
+  display: block;
+}
+.d-block-i{
+  display: block !important;
+}
+.d-flex{
+  display: flex;
+}
+.d-flex-i{
+  display: flex !important;
+}
+.jc-between{
+  justify-content: space-between;
+}
+.ai-center{
+  align-items: center;
+}
+.fx-wrap{
+  flex-wrap: wrap;
+}
+
+
+.w-100{
+  width: 100%;
+}
+.w-100-i{
+  width: 100% !important;
+}
+.h-100{
+  height: 100%;
+}
+.h-100-i{
+  height: 100% !important;
+}
+
+
+.m-auto{
+  margin: 0 auto;
+}
+.m-auto-i{
+  margin: 0 auto !important;
+}
+
+.m-0{
+  margin: 0;
+}
+.m-0-i{
+  margin: 0 !important;
+}
+.mt-0{
+  margin-top: 0;
+}
+.mt-0-i{
+  margin-top: 0 !important;
+}
+.mr-0{
+  margin-right: 0;
+}
+.mr-0-i{
+  margin-right: 0 !important;
+}
+.mb-0{
+  margin-bottom: 0;
+}
+.mb-0-i{
+  margin-bottom: 0 !important;
+}
+.ml-0{
+  margin-left: 0;
+}
+.ml-0-i{
+  margin-left: 0 !important;
+}
+
+.m-05r{
+  margin: 0.5rem;
+}
+.m-05r-i{
+  margin: 0.5rem !important;
+}
+.mt-05r{
+  margin-top: 0.5rem;
+}
+.mt-05r-i{
+  margin-top: 0.5rem !important;
+}
+.mr-05r{
+  margin-right: 0.5rem;
+}
+.mr-05r-i{
+  margin-right: 0.5rem !important;
+}
+.mb-05r{
+  margin-bottom: 0.5rem;
+}
+.mb-05r-i{
+  margin-bottom: 0.5rem !important;
+}
+.ml-05r{
+  margin-left: 0.5rem;
+}
+.ml-05r-i{
+  margin-left: 0.5rem !important;
+}
+
+.m-1r{
+  margin: 1rem;
+}
+.m-1r-i{
+  margin: 1rem !important;
+}
+.mt-1r{
+  margin-top: 1rem;
+}
+.mt-1r-i{
+  margin-top: 1rem !important;
+}
+.mr-1r{
+  margin-right: 1rem;
+}
+.mr-1r-i{
+  margin-right: 1rem !important;
+}
+.mb-1r{
+  margin-bottom: 1rem;
+}
+.mb-1r-i{
+  margin-bottom: 1rem !important;
+}
+.ml-1r{
+  margin-left: 1rem;
+}
+.ml-1r-i{
+  margin-left: 1rem !important;
+}
+
+.m-2r{
+  margin: 2rem;
+}
+.m-2r-i{
+  margin: 2rem !important;
+}
+.mt-2r{
+  margin-top: 2rem;
+}
+.mt-2r-i{
+  margin-top: 2rem !important;
+}
+.mr-2r{
+  margin-right: 2rem;
+}
+.mr-2r-i{
+  margin-right: 2rem !important;
+}
+.mb-2r{
+  margin-bottom: 2rem;
+}
+.mb-2r-i{
+  margin-bottom: 2rem !important;
+}
+.ml-2r{
+  margin-left: 2rem;
+}
+.ml-2r-i{
+  margin-left: 2rem !important;
+}
+
+.m-5r{
+  margin: 5rem;
+}
+.m-5r-i{
+  margin: 5rem !important;
+}
+.mt-5r{
+  margin-top: 5rem;
+}
+.mt-5r-i{
+  margin-top: 5rem !important;
+}
+.mr-5r{
+  margin-right: 5rem;
+}
+.mr-5r-i{
+  margin-right: 5rem !important;
+}
+.mb-5r{
+  margin-bottom: 5rem;
+}
+.mb-5r-i{
+  margin-bottom: 5rem !important;
+}
+.ml-5r{
+  margin-left: 5rem;
+}
+.ml-5r-i{
+  margin-left: 5rem !important;
+}
+
+.m-10r{
+  margin: 10rem;
+}
+.m-10r-i{
+  margin: 10rem !important;
+}
+.mt-10r{
+  margin-top: 10rem;
+}
+.mt-10r-i{
+  margin-top: 10rem !important;
+}
+.mr-10r{
+  margin-right: 10rem;
+}
+.mr-10r-i{
+  margin-right: 10rem !important;
+}
+.mb-10r{
+  margin-bottom: 10rem;
+}
+.mb-10r-i{
+  margin-bottom: 10rem !important;
+}
+.ml-10r{
+  margin-left: 10rem;
+}
+.ml-10r-i{
+  margin-left: 10rem !important;
+}
+
+.pt-0{
+  padding-top: 0;
+}
+.pt-0-i{
+  padding-top: 0 !important;
+}
+
+.p-05r{
+  padding: 0.5rem;
+}
+.p-05r-i{
+  padding: 0.5rem !important;
+}
+.pt-05r{
+  padding-top: 0.5rem;
+}
+.pt-05r-i{
+  padding-top: 0.5rem !important;
+}
+.pr-05r{
+  padding-right: 0.5rem;
+}
+.pr-05r-i{
+  padding-right: 0.5rem !important;
+}
+.pb-05r{
+  padding-bottom: 0.5rem;
+}
+.pb-05r-i{
+  padding-bottom: 0.5rem !important;
+}
+.pl-05r{
+  padding-left: 0.5rem;
+}
+.pl-05r-i{
+  padding-left: 0.5rem !important;
+}
+
+
+.p-1r{
+  padding: 1rem;
+}
+.p-1r-i{
+  padding: 1rem !important;
+}
+.pt-1r{
+  padding-top: 1rem;
+}
+.pt-1r-i{
+  padding-top: 1rem !important;
+}
+.pr-1r{
+  padding-right: 1rem;
+}
+.pr-1r-i{
+  padding-right: 1rem !important;
+}
+.pb-1r{
+  padding-bottom: 1rem;
+}
+.pb-1r-i{
+  padding-bottom: 1rem !important;
+}
+.pl-1r{
+  padding-left: 1rem;
+}
+.pl-1r-i{
+  padding-left: 1rem !important;
+}
+
+.p-2r{
+  padding: 2rem;
+}
+.p-2r-i{
+  padding: 2rem !important;
+}
+.pt-2r{
+  padding-top: 2rem;
+}
+.pt-2r-i{
+  padding-top: 2rem !important;
+}
+.pr-2r{
+  padding-right: 2rem;
+}
+.pr-2r-i{
+  padding-right: 2rem !important;
+}
+.pb-2r{
+  padding-bottom: 2rem;
+}
+.pb-2r-i{
+  padding-bottom: 2rem !important;
+}
+.pl-2r{
+  padding-left: 2rem;
+}
+.pl-2r-i{
+  padding-left: 2rem !important;
+}
+
+.p-5r{
+  padding: 5rem;
+}
+.p-5r-i{
+  padding: 5rem !important;
+}
+.pt-5r{
+  padding-top: 5rem;
+}
+.pt-5r-i{
+  padding-top: 5rem !important;
+}
+.pr-5r{
+  padding-right: 5rem;
+}
+.pr-5r-i{
+  padding-right: 5rem !important;
+}
+.pb-5r{
+  padding-bottom: 5rem;
+}
+.pb-5r-i{
+  padding-bottom: 5rem !important;
+}
+.pl-5r{
+  padding-left: 5rem;
+}
+.pl-5r-i{
+  padding-left: 5rem !important;
+}
+
+.p-10r{
+  padding: 10rem;
+}
+.p-10r-i{
+  padding: 10rem !important;
+}
+.pt-10r{
+  padding-top: 10rem;
+}
+.pt-10r-i{
+  padding-top: 10rem !important;
+}
+.pr-10r{
+  padding-right: 10rem;
+}
+.pr-10r-i{
+  padding-right: 10rem !important;
+}
+.pb-10r{
+  padding-bottom: 10rem;
+}
+.pb-10r-i{
+  padding-bottom: 10rem !important;
+}
+.pl-10r{
+  padding-left: 10rem;
+}
+.pl-10r-i{
+  padding-left: 10rem !important;
+}
+
+.bd-r-none{
+  border-radius: 0;
+}
+img.bd-r-circle{
+  border-radius: 50%;
+}
+
+.t-center{
+  text-align: center;
+}
+.t-left{
+  text-align: left;
+}
+.t-right{
+  text-align: right;
+}
+
+.wordBreakAll{
+  word-break: break-all;
+}
+
+.iconfont.rst{
+  font-size: 2rem;
+}
+
+/* 复写css */
+/* 按钮组 */
+.layui-btn+.layui-btn.ml-0{
+  margin-left: 0;
+}
+.layui-input.bd-r-none{
+  border-radius: 0;
+}
+
+.layui-form-item{
+  display: flex;
+  width: 100%;
+}
+.layui-form-label{
+  box-sizing: border-box;
+  height: 40px;
+  width: 30% !important;
+  border: 1px solid #e6e6e6;
+  text-align: center !important;
+}
+.layui-input-block{
+  width: 70%;
+  margin-left: 0 !important;
+}
+.layui-input-block input{
+  height: 40px;
+  border-left: 0;
+}
+
+.layui-nav-tree{
+  width: 100% !important;
+  background-color: transparent !important;
+}
+.layui-nav-tree .layui-nav-item{
+  margin-bottom: 1vh;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+}
+.layui-nav-tree .layui-nav-item a{
+  color: #393D49 !important;
+}
+
+.layui-form.reset .layui-form-item{
+  margin-top: .5rem;
+}
+
+.layui-form.reset .layui-form-item,
+.layui-form.reset .layui-form-item .layui-inline{
+  margin-bottom: 0;
+}
+.layui-form.reset .layui-input-inline{
+  margin: 0;
+}
+
+.layui-btn,
+.layui-laydate .layui-laydate-content .layui-this,
+.layui-form-select dl dd.layui-this{
+  background-color: var(--main-color) !important;
+}
+.layui-btn-primary{
+  background-color: transparent !important;
+}
+
+/* 自定义css */
+main.container{
+  width: 100%;
+  height: 100%;
+  background: var(--bg-l-grad-0)
+}
+
+.login{
+  width: 100%;
+  height: 100%;
+  /* margin-top: 25vh;
+  padding: 0 1rem; */
+  background: var(--bg-l-grad-0)
+
+}
+.busi-list .user-info{
+  display: flex;
+  height: 15vh;
+  line-height: 15vh;
+  font-size: 20px;
+}
+.busi-list .user-info img{
+  width: 12vh;
+  height: 12vh;
+  margin: 1.5vh;
+  border-radius: 50%;
+}
+
+.list{}
+
+.list .detail-title{
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+.list .detail-title, .list .button-group{
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+
+.list .query .query-item{
+  display: flex;
+  width: 100%;
+  padding: 0 .5rem;
+  box-sizing: border-box;
+}
+.list .query .query-item>.date-range{
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+  align-items: center;
+  margin-top: .5rem;
+}
+.list .query .query-item>.date-range>div{
+  display: flex;
+  width: 48%;
+}
+.list .query .query-item>.date-range>span{
+  width: 2%;
+  padding: 0 1%;
+  text-align: center;
+}
+
+.list .query .query-item>.date-range div>span{
+  width: 6rem;
+  line-height: 40px;
+  font-size: .8rem;
+}
+.list .query .query-item>.date-range div>input{
+  width: calc( 100% );
+}
+
+.table-container{
+  margin: 0 .5rem;
+  box-sizing: border-box;
+
+}
+.table-container table{
+  width: 100%;
+  margin-top: .5rem;
+  border-top: 1px solid #e6e6e6;
+}
+.table-container table thead{
+  border-bottom: 1px solid #e6e6e6;
+}
+.table-container table thead th{
+  height: 40px;
+}
+.table-container table tbody tr{
+  border-bottom: 1px solid #e6e6e6;
+}
+.table-container table tbody tr td{
+  width: 20%;
+}
+.table-container table tbody tr td:nth-of-type(1),
+.table-container table tbody tr td:nth-of-type(4){
+  width: 30%;
+}
+.table-container table tbody td{
+  padding: .5rem;
+  height: 30px;
+  text-align: center;
+}
+.table-container table tbody td>div{
+  overflow: hidden;
+}
+.table-container table tbody td>div>span{
+  display: block;
+  overflow: hidden; /*设置隐藏*/
+  text-overflow: ellipsis; /*设置隐藏部分为省略号*/
+}
+.table-container .mui-pull-bottom-pocket{
+  text-align: center;
+  margin-top: 10px;
+  color: #afafaf;
+}

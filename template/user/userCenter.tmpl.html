@@ -1,0 +1,104 @@
+<style>
+  .user-center {
+    background: #F6F9F8;
+  }
+
+  .user-center main>div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .user-center main>div.rst {
+    margin: 0 1rem;
+  }
+
+  .user-detail {
+    padding: 1rem;
+    /* background: rgba(0, 0, 0, .1); */
+  }
+
+  .user-detail .user-avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .user-detail .user-name {
+    flex: 2;
+    align-self: center;
+    padding-left: .5rem;
+  }
+
+  .user-detail .user-name .name {
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+  }
+
+  .user-info {
+    justify-content: space-around !important;
+  }
+
+  .user-feature {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    background: #fff;
+    border-radius: .3rem;
+  }
+
+  .user-feature>div {
+    width: 25%;
+    padding: 1rem;
+    /* border-bottom: 1px dashed #ddd;
+    border-right: 1px dashed #ddd; */
+  }
+  .user-feature>div:nth-of-type(n+5) {
+    border-bottom: 0;
+  }
+  .user-feature>div:nth-of-type(4n) {
+    border-right: 0;
+  }
+
+</style>
+<div class="user-center w-100 h-100 pt-05r">
+  <main class="main">
+    <div class="header mt-05r-i mb-05r-i rst">
+      <div class="head-left">
+      </div>
+      <div class="head-right">
+        <i class="iconfont icon-es-user-add rst"></i>
+        <i class="iconfont icon-es-scan rst"></i>
+        <i class="iconfont icon-es-setting rst"></i>
+      </div>
+    </div>
+    <div class="user-detail ml-1r mr-1r">
+      <div class="user-avatar">
+        <img src="{{if userDetail.src}}${userDetail.src}{{else}}../../img/user/default.jpg{{/if}}" class="bd-r-circle"
+          alt="">
+      </div>
+      <div class="user-name">
+        <div class="name">{{if userDetail.name}}${userDetail.name}{{else}}[用户名]{{/if}}</div>
+        <div class="description">简介：{{if userDetail.description}}${userDetail.description}{{else}}暂无简介{{/if}}</div>
+      </div>
+      <div class="member d-flex ai-center">
+        <i class="iconfont icon-es-wxbbiaowang rst"></i>
+        <p>会员</p>
+      </div>
+    </div>
+    <div class="user-info mt-1r-i mb-1r-i rst">
+      {{each(index,item) userInfo}}
+      <div class="t-center ${item.prop}">
+        <p>{{if item.number}}${item.number}{{else}}0{{/if}}</p>
+        <p>{{if item.label}}${item.label}{{else}}-{{/if}}</p>
+      </div>
+      {{/each}}
+    </div>
+    <div class="user-feature rst">
+      {{each(index,item) userFeature}}
+      <div class="t-center ${item.className} ${item.prop}" data-forward="${item.forward}">
+        <i class="iconfont ${item.icon} rst"></i>
+        <p>${item.label}</p>
+      </div>
+      {{/each}}
+    </div>
+  </main>
+</div>

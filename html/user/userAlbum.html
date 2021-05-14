@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的相册</title>
+  <link rel="stylesheet" href="../../css/public.css">
+  <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+  <link rel="stylesheet" href="../../css/font/iconfont.css">
+  <script src="https://cdn.bootcss.com/jquery/1.8.0/jquery.min.js"></script>
+  <script src="../../lib/layui/layui.js"></script>
+  <script src="../../lib/moment/moment.min.js"></script>
+  <script src="../../lib/jqueryTmpl/jquery.tmpl.js"></script>
+  <script src="../../js/render.js"></script>
+  <script src="../../js/es.js"></script>
+  <script src="../../js/api.js"></script>
+</head>
+
+<body>
+  <script>
+    // 项目路径
+    var _src = '../../';
+    // 我的相册
+    var myAlbums = [{
+        label: "头像",
+        cover: _src + "img/user/default.jpg",
+        count: 0
+      },
+      {
+        label: "普通",
+        cover: _src + "img/user/default.jpg",
+        count: 0
+      },
+      {
+        label: "原创",
+        cover: _src + "img/user/default.jpg",
+        count: 0
+      }
+    ]
+    // 我的图片
+    var myPhoto = [
+      {
+      label: '',
+      prop: 'record',
+      date: "2021-05",
+      photos: [{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      },{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      },{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      },{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      }]
+    },
+    {
+      label: '',
+      prop: 'record',
+      date: "2021-04",
+      photos: [{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      },{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      }]
+    },{
+      label: '',
+      prop: 'record',
+      date: "2020-11",
+      photos: [{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      },{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      },{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      },{
+        label: "",
+        src: _src + "img/user/default.jpg"
+      }]
+    }
+  ]// 渲染
+    ES.template(_src + 'template/user/userAlbum.tmpl.html')
+      .render('', {
+        currentTime: moment(new Date()).format('YYYY-MM-DD'),
+        albums: myAlbums,
+        photos: myPhoto
+      })
+
+    // 事件
+    $('.user-feature').on('click', 'div', function (event) {
+      var forward = $(event.target).attr("data-forward") || $(event.target).parent().attr("data-forward");
+      if (forward) {
+        window.location.href = forward
+      }
+    })
+    // 请求数据
+    ES.$ajax(info(), function (res) {
+      if (res.code == 200) {
+        $.each(userInfo, function (index, item) {
+          for (var key in res.data.userInfo) {
+            if (item.prop == key) {
+              item.number = res.data.userInfo[key]
+            }
+          }
+        })
+        setTimeout(function () {
+          $('.user-detail').html('')
+          $('.user-info').html('')
+          // 用户详情
+          ES.template(_src + 'template/user/userDetail.tmpl.html').render('.user-detail', {
+            userDetail: res.data.userDetail
+          })
+          // 用户信息
+          ES.template(_src + 'template/user/userInfo.tmpl.html').render('.user-info', {
+            userInfo: userInfo
+          })
+        }, 1000)
+      }
+    })
+  </script>
+</body>
+
+</html>

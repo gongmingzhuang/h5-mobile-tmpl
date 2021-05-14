@@ -1,0 +1,32 @@
+<div class="login pt-10r pl-1r pr-1r">
+  <main class="main">
+    <div class="login-logo">
+      <div class="logo m-auto" style="
+  width: {{if logo.width}}${logo.width}{{else logo.height}}${logo.height}{{else logo.size}}${logo.size}{{/if}}; 
+  height:{{if logo.height}}${logo.height}{{else logo.width}}${logo.width}{{else logo.size}}${logo.size}{{/if}};
+  ">
+        <img src="${logo.src}" style="border-radius: {{if logo.radius}}${logo.radius}{{/if}};" />
+      </div>
+    </div>
+    <form class="login-form layui-form mt-5r">
+      {{if list && list.length > 0}}
+      {{each(index,item) list}}
+      <div class="layui-form-item">
+        <label class="layui-form-label">${item.label}</label>
+        <div class="layui-input-block">
+          <input type="${item.type}" name="${item.prop}" autocomplete="off" class="layui-input bd-r-none"
+            maxlength="${item.maxlength}">
+        </div>
+      </div>
+      {{/each}}
+      {{/if}}
+      {{if buttonGroup && buttonGroup.length > 0}}
+      <div class="button-group">
+        {{each(index,item) buttonGroup}}
+        <button type="button" class="layui-btn ${item.style} w-100 mt-1r ml-0" id="${item.id}">${item.label}</button>
+        {{/each}}
+      </div>
+      {{/if}}
+    </form>
+  </main>
+</div>
